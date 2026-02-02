@@ -21,4 +21,9 @@ public class CodeSubmission {
     private String code;
     @Column(name = "created_at")
     private LocalDateTime createdAt;
+
+    @PrePersist
+    protected void onCreated() {
+        createdAt = LocalDateTime.now();
+    }
 }
