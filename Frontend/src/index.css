@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    @apply min-h-screen transition-colors duration-300;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-linear-to-r from-indigo-500 to-purple-600 bg-clip-text text-transparent;
+  }
+  
+  .btn-primary {
+    @apply bg-linear-to-r from-indigo-500 to-purple-600 text-white px-5 py-2.5 rounded-lg font-medium 
+           hover:shadow-lg hover:shadow-indigo-500/30 hover:-translate-y-0.5 transition-all duration-300;
+  }
+  
+  .btn-secondary {
+    @apply px-5 py-2.5 rounded-lg font-medium text-gray-600 dark:text-gray-400 
+           hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300;
+  }
+}

@@ -1,127 +1,14 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-<head>
+<!doctype html>
+<html lang="en">
+  <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AI Code Review</title>
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css">
-
-    <!-- Tailwind config -->
-    <script src="script.js" defer></script>
-</head>
-
-<body>
-<div class="container">
-    <header>
-        <div class="logo">
-            <div class="logo-icon">🔍</div>
-            <span>AI Code Review</span>
-        </div>
-        <div class="header-actions">
-            <button class="btn btn-primary">
-                <span>📝</span>
-                Review
-            </button>
-            <button class="btn btn-secondary">History</button>
-            <div class="theme-toggle">🌙</div>
-        </div>
-    </header>
-
-    <div class="hero">
-        <div class="badge">🔮 INTELLIGENT ANALYSIS</div>
-        <h1>Review code <span class="gradient-text">faster & safer</span></h1>
-        <p class="subtitle">Securely upload files or paste snippets. Our AI detects bugs, security flaws, and suggests optimizations in seconds.</p>
-    </div>
-
-    <div class="main-content">
-        <div class="upload-section">
-            <div class="section-header">
-                <span class="icon">📁</span>
-                Upload File
-                <span class="file-limit">Max 10MB</span>
-            </div>
-            <div class="upload-area" id="uploadArea">
-                <div class="upload-icon">☁️</div>
-                <div class="upload-text">Drop your file here</div>
-                <div class="browse-text">or <a href="#" id="browseLink">browse</a> from your computer</div>
-                <input type="file" id="fileInput" style="display: none;" accept=".js,.py,.java,.tsx,.css">
-                <div class="file-types">
-                    <span class="file-type">.js</span>
-                    <span class="file-type">.py</span>
-                    <span class="file-type">.java</span>
-                    <span class="file-type">.tsx</span>
-                    <span class="file-type">.css</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="divider-container">
-            <div class="divider-line"></div>
-            <div class="divider">OR</div>
-            <div class="divider-line"></div>
-        </div>
-
-        <div class="snippet-section">
-            <div class="snippet-header">
-                <div class="section-header">
-                    <span class="icon">⚡</span>
-                    Paste Snippet
-                </div>
-                <div class="snippet-actions">
-                    <button class="icon-btn" title="Clear">🗑️</button>
-                    <button class="icon-btn" title="Copy">📋</button>
-                </div>
-            </div>
-            <div class="code-editor">
-                <div class="editor-header">
-                    <div class="editor-dots">
-                        <div class="dot dot-red"></div>
-                        <div class="dot dot-yellow"></div>
-                        <div class="dot dot-green"></div>
-                    </div>
-                    <span class="editor-title">snippet.js</span>
-                    <span class="editor-title" style="margin-left: auto;">UTF-8</span>
-                </div>
-                <div class="editor-content">
-                    <textarea id="codeInput" placeholder="// Paste your code here..." rows="10"></textarea>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="security-badge">
-        <div class="security-icon">🛡️</div>
-        <div class="security-text">
-            <h3>Security Check Ready</h3>
-            <p>Files are encrypted and auto-deleted</p>
-        </div>
-    </div>
-
-    <button class="analyze-btn" id="analyzeBtn">
-        <span>🔧</span>
-        Analyse Code Now
-    </button>
-
-    <div style="height: 40px;"></div>
-
-    <div class="features">
-        <div class="feature-card">
-            <div class="feature-icon blue">🛡️</div>
-            <h3>Secure Check</h3>
-            <p>Enterprise-grade encryption ensures your intellectual property remains private and is deleted post-analysis.</p>
-        </div>
-        <div class="feature-card">
-            <div class="feature-icon purple">⚡</div>
-            <h3>Lightning Fast</h3>
-            <p>Get instant feedback on syntax errors, logic bugs, and style violations with our optimized AI engine.</p>
-        </div>
-        <div class="feature-card">
-            <div class="feature-icon orange">🕐</div>
-            <h3>Track History</h3>
-            <p>Access your previous analyses to track improvements and maintain code quality standards over time.</p>
-        </div>
-    </div>
-</div>
-</body>
+    <link href="/src/style.css" rel="stylesheet">
+    <title>frontend</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
