@@ -3,8 +3,10 @@ package com.project.ai_code_review.service;
 import com.project.ai_code_review.model.CodeVersion;
 import com.project.ai_code_review.repository.CodeVersionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import com.acciojob.aicodereview.service.AIService;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 public class VersionService {
@@ -12,7 +14,7 @@ public class VersionService {
     private CodeVersionRepository versionRepository;
 
     @Autowired
-    private AiService aiService;
+    private AIService aiService;
 
     public List<CodeVersion> getVersion(UUID submissionId) {
         // Implementation goes here
@@ -31,4 +33,8 @@ public class VersionService {
         return versionRepository.save(version);
     }
 
+    // Add this method to VersionService
+    public Optional<CodeVersion> getLatestVersion(UUID submissionId) {
+        return versionRepository.findTopBySubmissionIdOrderByVersionNumberDesc(submissionId);
+    }
 }

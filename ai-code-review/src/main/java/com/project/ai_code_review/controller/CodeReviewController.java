@@ -35,10 +35,13 @@ public class CodeReviewController {
 
     @PostMapping("/analyze/{submissionId}")
     public ResponseEntity<CodeVersion> analyzedCode(@PathVariable UUID submissionId) {
-        Optional<CodeVersion> latest = versionService.getVersion(submissionId).stream().max(Comparator.comparingInt(CodeVersion::getVersionNumber));
 
-        if(latest.isPresent()) {
-            return ResponseEntity.ok(versionService.analyzeCodeVersion(latest.get().getId()));
+        // FIX: use the dedicated repo query instead of manually streaming all versions
+        Optional<CodeVersion> latest =
+                versionService.getLatestVersion(submissionId);
+
+        if (latest.isPresent()) {
+            return ResponseEntity.ok(versionService.analyzeVersion(latest.get().getId()));
         }
 
         return ResponseEntity.notFound().build();
