@@ -31,3 +31,10 @@ build/
 
 ### VS Code ###
 .vscode/
+# Add Frontend to .gitignore
+echo "Frontend/" >> .gitignore
+echo "Frontend" >> .gitignore
+
+# Add the .gitignore file
+git add .gitignore
+git commit -m "Add Frontend to .gitignore"
