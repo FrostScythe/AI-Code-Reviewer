@@ -1,4 +1,4 @@
-package com.acciojob.aicodereview.service;
+package com.project.ai_code_review.service;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;

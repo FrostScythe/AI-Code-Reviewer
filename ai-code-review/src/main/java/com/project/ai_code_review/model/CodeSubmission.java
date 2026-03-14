@@ -12,6 +12,7 @@ import java.util.UUID;
 public class CodeSubmission {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
+    @Column(name = "user_id")
     private UUID id;
 
     private String fileName;
