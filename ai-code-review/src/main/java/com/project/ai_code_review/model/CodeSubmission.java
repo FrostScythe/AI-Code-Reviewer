@@ -12,14 +12,17 @@ import java.util.UUID;
 public class CodeSubmission {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    @Column(name = "user_id")
     private UUID id;
+
+    @Column(name = "user_id", nullable = false)  // ← add this
+    private UUID userId;
 
     private String fileName;
     private String language;
 
     @Column(columnDefinition = "TEXT")
     private String code;
+
     @Column(name = "created_at")
     private LocalDateTime createdAt;
 
