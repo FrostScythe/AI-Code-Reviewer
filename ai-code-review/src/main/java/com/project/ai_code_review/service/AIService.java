@@ -15,7 +15,6 @@ public class AIService {
 
     private final RestTemplate restTemplate = new RestTemplate();
 
-    // FIX: corrected model name from "gemini-flash-latest" → "gemini-1.5-flash-latest"
     private static final String GEMINI_URL =
             "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent";
 
@@ -40,7 +39,7 @@ public class AIService {
         List<Map<String, Object>> contents = new ArrayList<>();
         Map<String, Object> contentPart = new HashMap<>();
         List<Map<String, String>> parts = new ArrayList<>();
-        Map<String, String> textPart = new HashMap<>();  // FIX: was "testPart" (typo)
+        Map<String, String> textPart = new HashMap<>();
 
         textPart.put("text", promptText);
         parts.add(textPart);

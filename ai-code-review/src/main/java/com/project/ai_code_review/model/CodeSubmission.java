@@ -8,13 +8,16 @@ import java.util.UUID;
 
 @Data
 @Entity
-@Table(name="code_submissions")
+@Table(name = "code_submissions")
 public class CodeSubmission {
+
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
+    @Column(name = "id")
     private UUID id;
 
-    @Column(name = "user_id", nullable = false)  // ← add this
+    // Separate field to track which user owns this submission
+    @Column(name = "user_id", nullable = false)
     private UUID userId;
 
     private String fileName;
