@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.UUID;
 
 @Service
 public class CodeService {
@@ -19,13 +18,9 @@ public class CodeService {
     @Autowired
     private CodeVersionRepository codeVersionRepository;
 
-    /**
-     * Save a new code submission and auto-create Version 1.
-     */
     public CodeSubmission createCodeSubmission(CodeSubmission codeSubmission) {
         CodeSubmission saved = codeSubmissionRepository.save(codeSubmission);
 
-        // Always create Version 1 automatically on first upload
         CodeVersion version = new CodeVersion();
         version.setSubmission(saved);
         version.setVersionNumber(1);
@@ -36,10 +31,8 @@ public class CodeService {
         return saved;
     }
 
-    /**
-     * Fetch all submissions belonging to a specific user, newest first.
-     */
     public List<CodeSubmission> getSubmissionsByUser(String userId) {
-        return CodeSubmissionRepository.findByUserIdOrderByCreatedAtDesc(userId);
+        // ✅ FIX: use the injected instance 'codeSubmissionRepository', NOT the class name
+        return codeSubmissionRepository.findByUserIdOrderByCreatedAtDesc(userId);
     }
 }
