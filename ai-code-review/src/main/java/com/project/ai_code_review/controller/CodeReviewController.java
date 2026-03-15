@@ -94,9 +94,8 @@ public class CodeReviewController {
      * Used by the History page.
      */
     @GetMapping("/submissions/{userId}")
-    public ResponseEntity<List<CodeSubmission>> getUserSubmissions(@PathVariable UUID userId) {
-        List<CodeSubmission> submissions = codeService.getSubmissionsByUser(userId);
-        return ResponseEntity.ok(submissions);
+    public ResponseEntity<List<CodeSubmission>> getUserSubmissions(@PathVariable String userId) {
+        return ResponseEntity.ok(codeService.getSubmissionsByUser(userId));
     }
 
     // ─── Compare ─────────────────────────────────────────────────────────────

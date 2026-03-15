@@ -10,6 +10,5 @@ import java.util.UUID;
 @Repository
 public interface CodeSubmissionRepository extends JpaRepository<CodeSubmission, UUID> {
 
-    // Works now because CodeSubmission has a proper 'userId' field
-    List<CodeSubmission> findByUserIdOrderByCreatedAtDesc(UUID userId);
+    List<CodeSubmission> findByUserIdOrderByCreatedAtDesc(String userId);
 }

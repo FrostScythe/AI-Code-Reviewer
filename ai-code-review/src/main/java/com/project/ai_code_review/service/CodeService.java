@@ -39,7 +39,7 @@ public class CodeService {
     /**
      * Fetch all submissions belonging to a specific user, newest first.
      */
-    public List<CodeSubmission> getSubmissionsByUser(UUID userId) {
-        return codeSubmissionRepository.findByUserIdOrderByCreatedAtDesc(userId);
+    public List<CodeSubmission> getSubmissionsByUser(String userId) {
+        return CodeSubmissionRepository.findByUserIdOrderByCreatedAtDesc(userId);
     }
 }

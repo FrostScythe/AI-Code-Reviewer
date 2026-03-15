@@ -10,8 +10,10 @@ import java.util.UUID;
 
 @Repository
 public interface CodeVersionRepository extends JpaRepository<CodeVersion, UUID> {
-    List<CodeVersion> findBySubmissionId(UUID submissionId);
 
-    // ← this was missing — required by VersionService.getLatestVersion()
+    // Used by VersionService.getVersions() — returns all versions newest first
+    List<CodeVersion> findBySubmissionIdOrderByVersionNumberDesc(UUID submissionId);
+
+    // Used by VersionService.getLatestVersion() and createNewVersion()
     Optional<CodeVersion> findTopBySubmissionIdOrderByVersionNumberDesc(UUID submissionId);
 }
